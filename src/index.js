@@ -66,6 +66,10 @@ app.get('/timeout', (req,res)=>{
         res.send('Time out is finished')
     }, 10000);
 })
+
+app.get('/branch-test', (req,res)=>{
+    res.send('This is from test branch')
+})
 app.listen(3000, ()=>{
     console.log(" app listening on port 3000");
 })
