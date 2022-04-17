@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['buildx', 'build', '--platform', 'linux/amd64', '-t', 'gcr.io/testing-app-344604/app-test3', '.']
+  args: ['build', '-t', 'gcr.io/testing-app-344604/app-test4', '.', '--platform', 'linux/amd64']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/testing-app-344604/app-test3']
+  args: ['push', 'gcr.io/testing-app-344604/app-test4']
