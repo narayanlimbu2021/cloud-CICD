@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/testing-app-344604/node_app:$SHORT_SHA', '.', '--platform', 'linux/amd64']
+  args: ['build', '-t', 'gcr.io/testing-app-344604/node_app_v10', '.', '--platform', 'linux/amd64']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/testing-app-344604/node_app:$SHORT_SHA']
+  args: ['push', 'gcr.io/testing-app-344604/node_app_v10']
