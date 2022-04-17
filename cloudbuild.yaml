@@ -4,4 +4,4 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/app:$BUILD_ID']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', '$PROJECT_ID', '--region=australia-southeast1', '--platform=managed', '--image=gcr.io/gcr.io/$PROJECT_ID/app:$BUILD_ID' ]
+  args: ['beta', 'run', 'deploy', '$PROJECT_ID', '--region=australia-southeast1', '--platform=managed', '--image=gcr.io/$PROJECT_ID/app:$BUILD_ID' ]
