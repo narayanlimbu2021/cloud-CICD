@@ -52,7 +52,7 @@ app.patch('/task-update', (req,res)=>{
 
 app.patch('/task-update1', (req,res)=>{
     const {body}= req;
-    console.log('request received from gogle queue task update normal version', body)
+    console.log('request received from google queue task update normal version', body)
     res.send('ok')
 })
 
@@ -69,6 +69,12 @@ app.get('/timeout', (req,res)=>{
 
 app.get('/branch-test', (req,res)=>{
     res.send('This is from test branch 5 times ok')
+})
+
+app.get('/pub-sub', (req, res)=>{
+   
+    console.log('This is pub sub testing api');
+    res.send('pub sub api triggered');
 })
 app.listen(3000, ()=>{
     console.log(" app listening on port 3000");
