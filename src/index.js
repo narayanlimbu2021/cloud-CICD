@@ -72,6 +72,7 @@ app.get('/timeout', (req,res)=>{
 })
 
 app.get('/branch-test', (req,res)=>{
+    console.log('this is added extra branch')
     res.send('This is from test branch 5 times ok')
 })
 
