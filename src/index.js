@@ -89,7 +89,7 @@ app.get('/create-pub-sub', async(req,res)=>{
     res.send('ok');
 })
 
-app.get('/pub-sub', (req, res)=>{
+app.post('/pub-sub', (req, res)=>{
    
     console.log('This is pub sub testing api');
     res.send('pub sub api triggered');
