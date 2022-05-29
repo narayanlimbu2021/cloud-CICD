@@ -1,6 +1,6 @@
 const bodyParser = require('body-parser');
 const express=require('express');
-const {PubSub}=require('@google-cloud/pubsub');
+//const {PubSub}=require('@google-cloud/pubsub');
 const {createQueue,createQueueUpdate1,createQueueUpdate,  createQueue1}=require('./clout-task');
 
 
@@ -13,7 +13,7 @@ app.use(bodyParser.raw({type: 'application/octet-stream'}));
 
 // pubSub
 
-const pubsub=new PubSub();
+//const pubsub=new PubSub();
 
 app.get('/', async (req,res)=>{
     try{
@@ -77,16 +77,16 @@ app.get('/branch-test', (req,res)=>{
 
 // create pubsub
 
-app.get('/create-pub-sub', async(req,res)=>{
-    const topicName='projects/testing-app-344604/topics/Test-pubsub'
-    const topic=pubsub.topic(topicName);
-    const payload={'name': 'pubsub payload received'}
-    const message=Buffer.from(JSON.stringify(payload), 'utf-8');
+// app.get('/create-pub-sub', async(req,res)=>{
+//     const topicName='projects/testing-app-344604/topics/Test-pubsub'
+//     const topic=pubsub.topic(topicName);
+//     const payload={'name': 'pubsub payload received'}
+//     const message=Buffer.from(JSON.stringify(payload), 'utf-8');
 
-    await topic.publish(message);
+//     await topic.publish(message);
 
-    res.send('ok');
-})
+//     res.send('ok');
+// })
 
 app.get('/pub-sub', (req, res)=>{
    
