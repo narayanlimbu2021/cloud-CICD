@@ -46,7 +46,7 @@ app.patch('/task-update', (req,res)=>{
     const {body}= req;
     const jsonString = Buffer.from(body, 'base64').toString('utf-8');
     const final=JSON.parse(jsonString)
-    console.log('request received from gogle queue task update buffer version', final)
+    console.log('request received from google queue task update buffer version', final)
     res.send('ok')
 })
 
@@ -57,7 +57,7 @@ app.patch('/task-update1', (req,res)=>{
 })
 
 app.get('/testing',(req,res)=>{
-    console.log('Test run successfully')
+    console.log('Test run successfully added message')
     res.send('Testing running successfully')
 })
 app.get('/timeout', (req,res)=>{
