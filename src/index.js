@@ -78,7 +78,7 @@ app.get('/branch-test', (req,res)=>{
 // create pubsub
 
 app.get('/create-pub-sub', async(req,res)=>{
-    const topicName='projects/testing-app-344604/topics/Test-pubsub-sub'
+    const topicName='projects/testing-app-344604/topics/Test-pubsub'
     const topic=pubsub.topic(topicName);
     const payload={'name': 'pubsub payload received'}
     const message=Buffer.from(JSON.stringify(payload), 'utf-8');
