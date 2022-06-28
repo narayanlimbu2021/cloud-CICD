@@ -8,19 +8,20 @@ const body=Buffer.from(payload).toString('base64');
 console.log(body)
 
 async function createQueue(){
-    const queuePath='projects/testing-app-344604/locations/australia-southeast1/queues/testing'
+   // const queuePath='projects/testing-app-344604/locations/australia-southeast1/queues/testing'
+
+   const queuePath=client.queuePath('testing-app-344604','australia-southeast1', 'testing')
+   console.log('queue path',queuePath);
     const task={
         httpRequest: {
             httpMethod: 'POST',
-            url: 'https://app-1-jujn35s6jq-ts.a.run.app/task',
+            url: 'https://app-1-jujn35s6jq-ts.a.run.app/task-t',
             body,
             headers:{
                 'content-type': 'application/octet-stream',
             }
         },
     }
-
-
   
     const [response] = await client.createTask({parent:queuePath, task:task});
     console.log('task created', response);
@@ -69,7 +70,7 @@ async function createQueueUpdate1(){
     const task={
         httpRequest: {
             httpMethod: 'PATCH',
-            url: 'https://app-1-jujn35s6jq-ts.a.run.app//task-update1',
+            url: 'https://app-1-jujn35s6jq-ts.a.run.app/task-update9',
             body,
             headers:{
                 'content-type': 'application/octet-stream',

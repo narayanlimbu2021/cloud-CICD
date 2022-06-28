@@ -19,9 +19,9 @@ app.get('/', async (req,res)=>{
     try{
        await createQueue();
 
-       await createQueue1();
-       await createQueueUpdate1();
-       await createQueueUpdate();
+    //    await createQueue1();
+    //    await createQueueUpdate1();
+    //    await createQueueUpdate();
 
        console.log('queue has been created')
        res.send('This is Home page from docker container')
